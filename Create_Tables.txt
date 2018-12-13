@@ -1,0 +1,592 @@
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Brook]    Script Date: 21/05/2018 15:20:45 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Brook](
+	[case_no] [int] NOT NULL,
+	[age] [nvarchar](50) NULL,
+	[tarif] [nvarchar](50) NULL,
+	[gender] [nvarchar](50) NULL,
+	[location] [nvarchar](50) NULL,
+	[hospital] [nvarchar](50) NULL,
+	[urgent] [nvarchar](50) NULL,
+	[ownership] [nvarchar](50) NULL,
+	[update_cycle] [smallint] NULL
+) ON [PRIMARY]
+GO
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Brook_GIS]    Script Date: 21/05/2018 15:21:23 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Brook_GIS](
+	[case_no] [int] NOT NULL,
+	[age] [nvarchar](50) NULL,
+	[tarif] [nvarchar](50) NULL,
+	[gender] [nvarchar](50) NULL,
+	[location] [nvarchar](50) NULL,
+	[hospital] [nvarchar](50) NULL,
+	[urgent] [nvarchar](50) NULL,
+	[ownership] [nvarchar](50) NULL,
+	[Points_Id] [smallint] NULL,
+	[update_cycle] [smallint] NULL,
+	[No_Problem_Flag_For_all_Fields_Agg] [int] NULL,
+	[Latitude] [numeric](15, 13) NULL,
+	[Longitude] [numeric](15, 13) NULL
+) ON [PRIMARY]
+GO
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Brook_GIS_Zmani]    Script Date: 21/05/2018 15:21:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Brook_GIS_Zmani](
+	[case_no] [int] NOT NULL,
+	[age] [nvarchar](50) NULL,
+	[tarif] [nvarchar](50) NULL,
+	[gender] [nvarchar](50) NULL,
+	[location] [nvarchar](50) NULL,
+	[hospital] [nvarchar](50) NULL,
+	[urgent] [nvarchar](50) NULL,
+	[ownership] [nvarchar](50) NULL,
+	[Points_Id] [int] NULL,
+	[update_cycle] [smallint] NULL,
+	[Popluation] [int] NULL,
+	[No_Problem_Flag_For_all_Fields_Agg] [int] NULL,
+	[Points_Id_Calc] [int] NULL
+) ON [PRIMARY]
+GO
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Demographics]    Script Date: 21/05/2018 15:22:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Demographics](
+	[Points_Id] [smallint] NOT NULL,
+	[Municipal_Name] [nvarchar](100) NULL,
+	[Gender_Desc] [nvarchar](50) NULL,
+	[Age_Range_Desc] [nvarchar](50) NULL,
+	[Popluation] [int] NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Ez_Stat_Points]    Script Date: 21/05/2018 15:22:42 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Ez_Stat_Points](
+	[Points_Id] [int] NULL,
+	[Statictic_Area_Code] [nvarchar](50) NULL,
+	[Data_in_Lamas] [nvarchar](50) NULL,
+	[Municipal_Name] [nvarchar](50) NULL,
+	[HH] [int] NULL,
+	[Total_pop] [int] NULL,
+	[AVG_PPHH] [decimal](5, 2) NULL,
+	[Cluster_10] [int] NULL,
+	[Madad_Points] [int] NULL,
+	[Cluster_20] [int] NULL,
+	[West_Immigrants_Rate] [nvarchar](50) NULL,
+	[Russian_Rate] [nvarchar](50) NULL,
+	[Arab_Rate] [nvarchar](50) NULL,
+	[Orthodox_Rate_cbs] [int] NULL,
+	[Orthodox_Rate_points] [nvarchar](50) NULL,
+	[Kipa_Rate] [nvarchar](50) NULL,
+	[Ethiopian_Rate] [nvarchar](50) NULL,
+	[MEDIAN_AGE] [float] NULL,
+	[DEPENDENCY_RATIO] [float] NULL,
+	[AVG_PERSONS_HH] [float] NULL,
+	[AVG_YEARS_SCHOOL_AGED_25_54] [float] NULL,
+	[P_ACADEMIC_DEGREE_AGED_25_54] [float] NULL,
+	[P_WORKERS_ACAD_OR_MANAGE] [float] NULL,
+	[P_WAGE_INCOME_EARNERS_15_UP] [float] NULL,
+	[P_WOMEN_25_54_NOT_WORKING] [float] NULL,
+	[P_WAGE_ABOVE_TWICE_AVG_WAGE] [float] NULL,
+	[P_SUB_MINIMUM_WAGE_EARNERS] [float] NULL,
+	[P_RECIP_SUP_AND_SUP_OLDAGE] [float] NULL,
+	[AVG_MONTHLY_INCOME_STAND_PER] [int] NULL,
+	[AVG_NUM_OF_CARS_AT_HH_PER_18_U] [float] NULL,
+	[AVG_NUM_ROOMS_PER_PERSON_IN_H] [float] NULL,
+	[AVG_NUM_BATHS_PER_PERSON_IN_H] [float] NULL,
+	[P_HH_WITH_PC_AND_INT_ACCESS] [float] NULL,
+	[Total_15Up] [int] NULL,
+	[Total_M] [int] NULL,
+	[M00_04] [int] NULL,
+	[M05_09] [int] NULL,
+	[M10_14] [int] NULL,
+	[M15_19] [int] NULL,
+	[M20_24] [int] NULL,
+	[M25_29] [int] NULL,
+	[M30_34] [int] NULL,
+	[M35_39] [int] NULL,
+	[M40_44] [int] NULL,
+	[M45_49] [int] NULL,
+	[M50_54] [int] NULL,
+	[M55_59] [int] NULL,
+	[M60_64] [int] NULL,
+	[M65_69] [int] NULL,
+	[M70_74] [int] NULL,
+	[M75_] [int] NULL,
+	[Total_W] [int] NULL,
+	[W00_04] [int] NULL,
+	[W05_09] [int] NULL,
+	[W10_14] [int] NULL,
+	[W15_19] [int] NULL,
+	[W20_24] [int] NULL,
+	[W25_29] [int] NULL,
+	[W30_34] [int] NULL,
+	[W35_39] [int] NULL,
+	[W40_44] [int] NULL,
+	[W45_49] [int] NULL,
+	[W50_54] [int] NULL,
+	[W55_59] [int] NULL,
+	[W60_64] [int] NULL,
+	[W65_69] [int] NULL,
+	[W70_74] [int] NULL,
+	[W75_] [int] NULL,
+	[Total00_04] [int] NULL,
+	[Total05_09] [int] NULL,
+	[Total10_14] [int] NULL,
+	[Total15_19] [int] NULL,
+	[Total20_24] [int] NULL,
+	[Total25_29] [int] NULL,
+	[Total30_34] [int] NULL,
+	[Total35_39] [int] NULL,
+	[Total40_44] [int] NULL,
+	[Total45_49] [int] NULL,
+	[Total50_54] [int] NULL,
+	[Total55_59] [int] NULL,
+	[Total60_64] [int] NULL,
+	[Total65_69] [int] NULL,
+	[Total70_74] [int] NULL,
+	[Total75_] [int] NULL,
+	[M00_04P] [decimal](5, 2) NULL,
+	[M05_09P] [decimal](5, 2) NULL,
+	[M10_14P] [decimal](5, 2) NULL,
+	[M15_19P] [decimal](5, 2) NULL,
+	[M20_24P] [decimal](5, 2) NULL,
+	[M25_29P] [decimal](5, 2) NULL,
+	[M30_34P] [decimal](5, 2) NULL,
+	[M35_39P] [decimal](5, 2) NULL,
+	[M40_44P] [decimal](5, 2) NULL,
+	[M45_49P] [decimal](5, 2) NULL,
+	[M50_54P] [decimal](5, 2) NULL,
+	[M55_59P] [decimal](5, 2) NULL,
+	[M60_64P] [decimal](5, 2) NULL,
+	[M65_69P] [decimal](5, 2) NULL,
+	[M70_74P] [decimal](5, 2) NULL,
+	[M75_P] [decimal](5, 2) NULL,
+	[W00_04P] [decimal](5, 2) NULL,
+	[W05_09P] [decimal](5, 2) NULL,
+	[W10_14P] [decimal](5, 2) NULL,
+	[W15_19P] [decimal](5, 2) NULL,
+	[W20_24P] [decimal](5, 2) NULL,
+	[W25_29P] [decimal](5, 2) NULL,
+	[W30_34P] [decimal](5, 2) NULL,
+	[W35_39P] [decimal](5, 2) NULL,
+	[W40_44P] [decimal](5, 2) NULL,
+	[W45_49P] [decimal](5, 2) NULL,
+	[W50_54P] [decimal](5, 2) NULL,
+	[W55_59P] [decimal](5, 2) NULL,
+	[W60_64P] [decimal](5, 2) NULL,
+	[W65_69P] [decimal](5, 2) NULL,
+	[W70_74P] [decimal](5, 2) NULL,
+	[W75_P] [decimal](5, 2) NULL,
+	[Total00_04P] [decimal](5, 2) NULL,
+	[Total05_09P] [decimal](5, 2) NULL,
+	[Total10_14P] [decimal](5, 2) NULL,
+	[Total15_19P] [decimal](5, 2) NULL,
+	[Total20_24P] [decimal](5, 2) NULL,
+	[Total25_29P] [decimal](5, 2) NULL,
+	[Total30_34P] [decimal](5, 2) NULL,
+	[Total35_39P] [decimal](5, 2) NULL,
+	[Total40_44P] [decimal](5, 2) NULL,
+	[Total45_49P] [decimal](5, 2) NULL,
+	[Total50_54P] [decimal](5, 2) NULL,
+	[Total55_59P] [decimal](5, 2) NULL,
+	[Total60_64P] [decimal](5, 2) NULL,
+	[Total65_69P] [decimal](5, 2) NULL,
+	[Total70_74P] [decimal](5, 2) NULL,
+	[Total75_P] [decimal](5, 2) NULL,
+	[Org_MapStat_Mifkad2008] [nvarchar](50) NULL,
+	[EZ_Name] [nvarchar](50) NULL,
+	[EZ_Type] [int] NULL,
+	[Ez_Type_CBS] [nvarchar](50) NULL,
+	[EZ_Source] [nvarchar](50) NULL,
+	[Settlement_Type_Code] [nvarchar](50) NULL,
+	[Municipal_Code] [nvarchar](50) NULL,
+	[Area_Code] [nvarchar](50) NULL,
+	[Org_MapStat_Mifkad1995] [nvarchar](50) NULL,
+	[Change_From_1995] [nvarchar](50) NULL,
+	[Pop_Data_Source] [nvarchar](50) NULL,
+	[Source_Russian_Rate] [nvarchar](50) NULL,
+	[Source_Ethiopian_Rate] [nvarchar](50) NULL,
+	[Source_Arab_Rate] [nvarchar](50) NULL,
+	[City_Type] [nvarchar](50) NULL,
+	[Add_Date] [int] NULL,
+	[Edit_Date] [int] NULL,
+	[Source_Cluster10] [nvarchar](50) NULL,
+	[Ez_Stat_Points_Prev] [nvarchar](50) NULL,
+	[Area_Km_Sq] [float] NULL,
+	[Pop_Density_Points] [int] NULL,
+	[Cluster_10_mifkad95] [int] NULL,
+	[Cluster_20_mifkad95] [int] NULL,
+	[Arab_Type] [nvarchar](50) NULL,
+	[Cty_SKM] [float] NULL,
+	[HH_SKM] [int] NULL,
+	[Source_Madad_Points] [nvarchar](50) NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Ez_Stat_Points_Center]    Script Date: 21/05/2018 15:22:55 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Ez_Stat_Points_Center](
+	[Points_Id] [int] NOT NULL,
+	[Lat] [numeric](15, 13) NULL,
+	[Lon] [numeric](15, 13) NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_GIS_address_service]    Script Date: 21/05/2018 15:23:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_GIS_address_service](
+	[case_no] [int] NOT NULL,
+	[Points_Id] [smallint] NULL,
+	[Latitude] [numeric](15, 13) NULL,
+	[Longitude] [numeric](15, 13) NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Ishuving_Israel]    Script Date: 21/05/2018 15:23:25 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Ishuving_Israel](
+	[Place_Symbol] [int] NOT NULL,
+	[Place_Desc] [nvarchar](500) NULL,
+	[Latitude] [numeric](15, 13) NULL,
+	[Longitude] [numeric](15, 13) NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Locations]    Script Date: 21/05/2018 15:23:38 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Locations](
+	[Place_Symbol] [int] NOT NULL,
+	[Place_Desc] [nvarchar](500) NULL,
+	[Latitude] [numeric](15, 13) NULL,
+	[Longitude] [numeric](15, 13) NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_No_Problems_Zmani]    Script Date: 21/05/2018 15:23:51 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_No_Problems_Zmani](
+	[case_no] [int] NOT NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Points]    Script Date: 21/05/2018 15:24:03 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Points](
+	[Points_Id] [int] NULL,
+	[Statictic_Area_Code] [nvarchar](50) NULL,
+	[Data_in_Lamas] [nvarchar](50) NULL,
+	[Municipal_Name] [nvarchar](50) NULL,
+	[HH] [int] NULL,
+	[Total_pop] [int] NULL,
+	[AVG_PPHH] [decimal](5, 2) NULL,
+	[Cluster_10] [int] NULL,
+	[Madad_Points] [int] NULL,
+	[Cluster_20] [int] NULL,
+	[West_Immigrants_Rate] [nvarchar](50) NULL,
+	[Russian_Rate] [nvarchar](50) NULL,
+	[Arab_Rate] [nvarchar](50) NULL,
+	[Orthodox_Rate_cbs] [int] NULL,
+	[Orthodox_Rate_points] [nvarchar](50) NULL,
+	[Kipa_Rate] [nvarchar](50) NULL,
+	[Ethiopian_Rate] [nvarchar](50) NULL,
+	[MEDIAN_AGE] [float] NULL,
+	[DEPENDENCY_RATIO] [float] NULL,
+	[AVG_PERSONS_HH] [float] NULL,
+	[AVG_YEARS_SCHOOL_AGED_25_54] [float] NULL,
+	[P_ACADEMIC_DEGREE_AGED_25_54] [float] NULL,
+	[P_WORKERS_ACAD_OR_MANAGE] [float] NULL,
+	[P_WAGE_INCOME_EARNERS_15_UP] [float] NULL,
+	[P_WOMEN_25_54_NOT_WORKING] [float] NULL,
+	[P_WAGE_ABOVE_TWICE_AVG_WAGE] [float] NULL,
+	[P_SUB_MINIMUM_WAGE_EARNERS] [float] NULL,
+	[P_RECIP_SUP_AND_SUP_OLDAGE] [float] NULL,
+	[AVG_MONTHLY_INCOME_STAND_PER] [int] NULL,
+	[AVG_NUM_OF_CARS_AT_HH_PER_18_U] [float] NULL,
+	[AVG_NUM_ROOMS_PER_PERSON_IN_H] [float] NULL,
+	[AVG_NUM_BATHS_PER_PERSON_IN_H] [float] NULL,
+	[P_HH_WITH_PC_AND_INT_ACCESS] [float] NULL,
+	[Total_15Up] [int] NULL,
+	[Total_M] [int] NULL,
+	[M00_04] [int] NULL,
+	[M05_09] [int] NULL,
+	[M10_14] [int] NULL,
+	[M15_19] [int] NULL,
+	[M20_24] [int] NULL,
+	[M25_29] [int] NULL,
+	[M30_34] [int] NULL,
+	[M35_39] [int] NULL,
+	[M40_44] [int] NULL,
+	[M45_49] [int] NULL,
+	[M50_54] [int] NULL,
+	[M55_59] [int] NULL,
+	[M60_64] [int] NULL,
+	[M65_69] [int] NULL,
+	[M70_74] [int] NULL,
+	[M75_] [int] NULL,
+	[Total_W] [int] NULL,
+	[W00_04] [int] NULL,
+	[W05_09] [int] NULL,
+	[W10_14] [int] NULL,
+	[W15_19] [int] NULL,
+	[W20_24] [int] NULL,
+	[W25_29] [int] NULL,
+	[W30_34] [int] NULL,
+	[W35_39] [int] NULL,
+	[W40_44] [int] NULL,
+	[W45_49] [int] NULL,
+	[W50_54] [int] NULL,
+	[W55_59] [int] NULL,
+	[W60_64] [int] NULL,
+	[W65_69] [int] NULL,
+	[W70_74] [int] NULL,
+	[W75_] [int] NULL,
+	[Total00_04] [int] NULL,
+	[Total05_09] [int] NULL,
+	[Total10_14] [int] NULL,
+	[Total15_19] [int] NULL,
+	[Total20_24] [int] NULL,
+	[Total25_29] [int] NULL,
+	[Total30_34] [int] NULL,
+	[Total35_39] [int] NULL,
+	[Total40_44] [int] NULL,
+	[Total45_49] [int] NULL,
+	[Total50_54] [int] NULL,
+	[Total55_59] [int] NULL,
+	[Total60_64] [int] NULL,
+	[Total65_69] [int] NULL,
+	[Total70_74] [int] NULL,
+	[Total75_] [int] NULL,
+	[M00_04P] [decimal](5, 2) NULL,
+	[M05_09P] [decimal](5, 2) NULL,
+	[M10_14P] [decimal](5, 2) NULL,
+	[M15_19P] [decimal](5, 2) NULL,
+	[M20_24P] [decimal](5, 2) NULL,
+	[M25_29P] [decimal](5, 2) NULL,
+	[M30_34P] [decimal](5, 2) NULL,
+	[M35_39P] [decimal](5, 2) NULL,
+	[M40_44P] [decimal](5, 2) NULL,
+	[M45_49P] [decimal](5, 2) NULL,
+	[M50_54P] [decimal](5, 2) NULL,
+	[M55_59P] [decimal](5, 2) NULL,
+	[M60_64P] [decimal](5, 2) NULL,
+	[M65_69P] [decimal](5, 2) NULL,
+	[M70_74P] [decimal](5, 2) NULL,
+	[M75_P] [decimal](5, 2) NULL,
+	[W00_04P] [decimal](5, 2) NULL,
+	[W05_09P] [decimal](5, 2) NULL,
+	[W10_14P] [decimal](5, 2) NULL,
+	[W15_19P] [decimal](5, 2) NULL,
+	[W20_24P] [decimal](5, 2) NULL,
+	[W25_29P] [decimal](5, 2) NULL,
+	[W30_34P] [decimal](5, 2) NULL,
+	[W35_39P] [decimal](5, 2) NULL,
+	[W40_44P] [decimal](5, 2) NULL,
+	[W45_49P] [decimal](5, 2) NULL,
+	[W50_54P] [decimal](5, 2) NULL,
+	[W55_59P] [decimal](5, 2) NULL,
+	[W60_64P] [decimal](5, 2) NULL,
+	[W65_69P] [decimal](5, 2) NULL,
+	[W70_74P] [decimal](5, 2) NULL,
+	[W75_P] [decimal](5, 2) NULL,
+	[Total00_04P] [decimal](5, 2) NULL,
+	[Total05_09P] [decimal](5, 2) NULL,
+	[Total10_14P] [decimal](5, 2) NULL,
+	[Total15_19P] [decimal](5, 2) NULL,
+	[Total20_24P] [decimal](5, 2) NULL,
+	[Total25_29P] [decimal](5, 2) NULL,
+	[Total30_34P] [decimal](5, 2) NULL,
+	[Total35_39P] [decimal](5, 2) NULL,
+	[Total40_44P] [decimal](5, 2) NULL,
+	[Total45_49P] [decimal](5, 2) NULL,
+	[Total50_54P] [decimal](5, 2) NULL,
+	[Total55_59P] [decimal](5, 2) NULL,
+	[Total60_64P] [decimal](5, 2) NULL,
+	[Total65_69P] [decimal](5, 2) NULL,
+	[Total70_74P] [decimal](5, 2) NULL,
+	[Total75_P] [decimal](5, 2) NULL,
+	[Org_MapStat_Mifkad2008] [nvarchar](50) NULL,
+	[EZ_Name] [nvarchar](50) NULL,
+	[EZ_Type] [int] NULL,
+	[Ez_Type_CBS] [nvarchar](50) NULL,
+	[EZ_Source] [nvarchar](50) NULL,
+	[Settlement_Type_Code] [nvarchar](50) NULL,
+	[Municipal_Code] [nvarchar](50) NULL,
+	[Area_Code] [nvarchar](50) NULL,
+	[Org_MapStat_Mifkad1995] [nvarchar](50) NULL,
+	[Change_From_1995] [nvarchar](50) NULL,
+	[Pop_Data_Source] [nvarchar](50) NULL,
+	[Source_Russian_Rate] [nvarchar](50) NULL,
+	[Source_Ethiopian_Rate] [nvarchar](50) NULL,
+	[Source_Arab_Rate] [nvarchar](50) NULL,
+	[City_Type] [nvarchar](50) NULL,
+	[Add_Date] [int] NULL,
+	[Edit_Date] [int] NULL,
+	[Source_Cluster10] [nvarchar](50) NULL,
+	[Ez_Stat_Points_Prev] [nvarchar](50) NULL,
+	[Area_Km_Sq] [float] NULL,
+	[Pop_Density_Points] [int] NULL,
+	[Cluster_10_mifkad95] [int] NULL,
+	[Cluster_20_mifkad95] [int] NULL,
+	[Arab_Type] [nvarchar](50) NULL,
+	[Cty_SKM] [float] NULL,
+	[HH_SKM] [int] NULL,
+	[Source_Madad_Points] [nvarchar](50) NULL,
+	[Latitude] [numeric](15, 13) NULL,
+	[Longitude] [numeric](15, 13) NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Points_Neighbors]    Script Date: 21/05/2018 15:24:21 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Points_Neighbors](
+	[Auto_ID] [int] NULL,
+	[Points_Id] [int] NOT NULL,
+	[Points_Id_Neighbor] [int] NULL,
+	[Distance] [int] NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+USE [Health_DWH]
+GO
+
+/****** Object:  Table [BRIUTNT\amir.shaked].[tbl_Yes_Problems_Zmani]    Script Date: 21/05/2018 15:24:45 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[tbl_Yes_Problems_Zmani](
+	[case_no] [int] NOT NULL
+) ON [PRIMARY]
+GO
+
+
+---------------------
+
+---------------------
+
+---------------------
+
+---------------------
